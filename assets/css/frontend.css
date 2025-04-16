@@ -1,0 +1,120 @@
+/**
+ * Estilos para exibição da paleta de cores no frontend
+ */
+
+/* Contêiner da paleta */
+.cpm-palette-container {
+  margin-bottom: 30px;
+}
+
+/* Seção da paleta */
+.cpm-palette-section {
+  margin-bottom: 30px;
+}
+
+.cpm-palette-section:last-child {
+  margin-bottom: 0;
+}
+
+.cpm-palette-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Grid de cores */
+.cpm-color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Amostra de cor */
+.cpm-color-swatch {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.cpm-color-sample {
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.cpm-color-sample:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Informações da cor */
+.cpm-color-info {
+  width: 100%;
+}
+
+.cpm-color-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.cpm-color-value {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Tratamento para texto claro/escuro */
+.cpm-color-light-text {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cpm-color-dark-text {
+  color: #333;
+}
+
+/* Responsividade */
+@media screen and (max-width: 992px) {
+  .cpm-color-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cpm-color-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cpm-color-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos para visualização no Elementor */
+.elementor-preview .cpm-palette-section {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px dashed #ccc;
+  text-align: center;
+}
+
+.elementor-preview .cpm-palette-section h3 {
+  border-bottom: none;
+}
+
+/* Suporte a temas escuros */
+.wp-admin.color-scheme-dark .cpm-palette-section h3,
+.wp-admin.color-scheme-dark .cpm-color-dark-text {
+  color: #f0f0f1;
+}
+
+.wp-admin.color-scheme-dark .cpm-color-light-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}

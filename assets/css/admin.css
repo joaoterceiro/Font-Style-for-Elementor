@@ -1,121 +1,310 @@
 /**
- * Estilos para a área de administração
+ * Estilos para a área de administração do Color Palette Manager
  */
-/* Estilos existentes... */
 
-/* Estilos da documentação */
-.fse-documentation-wrap {
+/* Estilos gerais */
+.cpm-settings-wrap {
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 20px 0;
 }
 
-.fse-documentation-content {
+.cpm-tabs-wrapper {
+  background: #fff;
+  border: 1px solid #ccd0d4;
+  border-radius: 4px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Navegação de abas */
+.cpm-tabs-nav {
+  display: flex;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ccd0d4;
+}
+
+.cpm-tab-link {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  border-right: 1px solid #eeeeee;
+}
+
+.cpm-tab-link:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.cpm-tab-link .dashicons {
+  margin-right: 8px;
+  font-size: 18px;
+  line-height: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.cpm-tab-link.active {
+  background-color: #fff;
+  color: #0073aa;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.cpm-tab-link:hover {
+  color: #0073aa;
+  background-color: #fafafa;
+}
+
+/* Conteúdo das abas */
+.cpm-tabs-content {
+  padding: 20px;
+}
+
+.cpm-tab-content {
+  display: none;
+}
+
+.cpm-tab-content.active {
+  display: block;
+}
+
+.cpm-tab-content h2 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Contêineres de cores */
+.cpm-colors-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cpm-color-item {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.cpm-color-preview {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.cpm-color-inputs {
+  flex-grow: 1;
+  display: flex;
+  margin-right: 15px;
+}
+
+.cpm-color-name {
+  flex-grow: 1;
+  margin-right: 15px !important;
+}
+
+.cpm-color-value {
+  width: 150px !important;
+}
+
+.cpm-color-actions {
+  flex-shrink: 0;
+}
+
+.cpm-color-actions-main {
+  margin-top: 20px;
+}
+
+/* Correção para o seletor de cores */
+.cpm-color-item .wp-picker-container {
+  position: relative;
+  z-index: 2;
+  /* Valor maior para sobrepor outros elementos */
+  display: inline-block;
+  /* Garante que o elemento tenha um tamanho definido */
+}
+
+.cpm-color-item .wp-picker-holder {
+  position: absolute;
+  z-index: 100;
+  /* Valor maior para garantir que apareça acima dos outros */
+  top: 100%;
+  /* Posiciona abaixo do input */
+  left: 0;
+}
+
+/* Botão de salvar */
+.cpm-submit-container {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f7f7f7;
+  border: 1px solid #ccd0d4;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+#cpm-save-message {
+  margin-left: 15px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+#cpm-save-message.success {
+  background-color: #edfaef;
+  color: #46b450;
+  border: 1px solid #d5e8d8;
+}
+
+#cpm-save-message.error {
+  background-color: #faeaea;
+  color: #dc3232;
+  border: 1px solid #e8d8d8;
+}
+
+/* Estilos para a seção "Como Usar" */
+.cpm-how-to-use {
+  background: #fff;
+  padding: 15px;
+}
+
+.cpm-how-to-use-section {
+  margin-bottom: 30px;
+}
+
+.cpm-how-to-use-section h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.cpm-how-to-use-section ol {
+  margin-left: 20px;
+}
+
+.cpm-how-to-use-section pre {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+  overflow-x: auto;
+}
+
+/* Estilos para a página de documentação */
+.cpm-documentation-wrap {
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+.cpm-documentation-content {
   background: #fff;
   padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: 1px solid #ccd0d4;
 }
 
-.fse-doc-section {
+.cpm-doc-section {
   margin-bottom: 40px;
   border-bottom: 1px solid #eee;
   padding-bottom: 30px;
 }
 
-.fse-doc-section:last-child {
+.cpm-doc-section:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.fse-doc-section h2 {
+.cpm-doc-section h2 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #23282d;
 }
 
-.fse-doc-steps {
+.cpm-doc-section h3 {
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #23282d;
+}
+
+.cpm-doc-steps {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 20px;
 }
 
-.fse-doc-step {
+.cpm-doc-step {
   background: #f9f9f9;
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #eee;
 }
 
-.fse-doc-step h3 {
-  font-size: 18px;
+.cpm-doc-step h4 {
+  font-size: 16px;
   margin-bottom: 15px;
   color: #23282d;
 }
 
-.fse-doc-image {
+.cpm-doc-image {
   margin-top: 15px;
   border: 1px solid #ddd;
   border-radius: 3px;
   overflow: hidden;
 }
 
-.fse-doc-image img {
+.cpm-doc-image img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.fse-doc-table {
+.cpm-doc-table {
   margin-top: 20px;
   overflow-x: auto;
 }
 
-.fse-doc-table table {
+.cpm-doc-table table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.fse-doc-table th,
-.fse-doc-table td {
+.cpm-doc-table th,
+.cpm-doc-table td {
   padding: 12px 15px;
   text-align: left;
   border: 1px solid #ddd;
 }
 
-.fse-doc-table th {
+.cpm-doc-table th {
   background-color: #f5f5f5;
   font-weight: 600;
 }
 
-.fse-doc-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+.cpm-doc-faq {
+  margin-top: 25px;
 }
 
-.fse-doc-tip {
-  background-color: #f0f6fc;
-  border-left: 4px solid #0073aa;
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  border-radius: 0 5px 5px 0;
-}
-
-.fse-doc-tip h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #23282d;
-}
-
-.fse-doc-faq {
-  margin-top: 20px;
-}
-
-.fse-doc-question {
+.cpm-doc-question {
   margin-bottom: 25px;
 }
 
-.fse-doc-question h3 {
+.cpm-doc-question h3 {
   font-size: 16px;
   margin-bottom: 10px;
   color: #23282d;
@@ -123,7 +312,7 @@
   padding-left: 25px;
 }
 
-.fse-doc-question h3:before {
+.cpm-doc-question h3:before {
   content: "Q:";
   position: absolute;
   left: 0;
@@ -132,12 +321,12 @@
   color: #0073aa;
 }
 
-.fse-doc-question p {
+.cpm-doc-question p {
   padding-left: 25px;
   position: relative;
 }
 
-.fse-doc-question p:before {
+.cpm-doc-question p:before {
   content: "A:";
   position: absolute;
   left: 0;
@@ -148,26 +337,43 @@
 
 /* Responsividade */
 @media screen and (max-width: 782px) {
-  .fse-doc-steps {
+  .cpm-color-inputs {
+    flex-direction: column;
+  }
+
+  .cpm-color-name {
+    margin-right: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cpm-doc-steps {
     grid-template-columns: 1fr;
   }
 
-  .fse-documentation-content {
-    padding: 20px;
+  .cpm-tab-link {
+    padding: 10px 15px;
+    font-size: 13px;
   }
 }
 
-/* Adicionando estilo para placeholder de imagem */
-.fse-doc-image-placeholder {
-  background: #f5f5f5;
-  padding: 20px;
-  text-align: center;
-  border: 1px dashed #ccc;
-  border-radius: 3px;
-}
+@media screen and (max-width: 600px) {
+  .cpm-color-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.fse-doc-image-placeholder p {
-  margin: 0;
-  color: #666;
-  font-style: italic;
+  .cpm-color-preview {
+    margin-bottom: 15px;
+  }
+
+  .cpm-color-inputs {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .cpm-color-actions {
+    width: 100%;
+    text-align: right;
+  }
 }
