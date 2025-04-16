@@ -1,0 +1,173 @@
+/**
+ * Estilos para a área de administração
+ */
+/* Estilos existentes... */
+
+/* Estilos da documentação */
+.fse-documentation-wrap {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.fse-documentation-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.fse-doc-section {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+}
+
+.fse-doc-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.fse-doc-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #23282d;
+}
+
+.fse-doc-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.fse-doc-step {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.fse-doc-step h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #23282d;
+}
+
+.fse-doc-image {
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fse-doc-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fse-doc-table {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.fse-doc-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fse-doc-table th,
+.fse-doc-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.fse-doc-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.fse-doc-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.fse-doc-tip {
+  background-color: #f0f6fc;
+  border-left: 4px solid #0073aa;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 0 5px 5px 0;
+}
+
+.fse-doc-tip h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #23282d;
+}
+
+.fse-doc-faq {
+  margin-top: 20px;
+}
+
+.fse-doc-question {
+  margin-bottom: 25px;
+}
+
+.fse-doc-question h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #23282d;
+  position: relative;
+  padding-left: 25px;
+}
+
+.fse-doc-question h3:before {
+  content: "Q:";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: #0073aa;
+}
+
+.fse-doc-question p {
+  padding-left: 25px;
+  position: relative;
+}
+
+.fse-doc-question p:before {
+  content: "A:";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: #46b450;
+}
+
+/* Responsividade */
+@media screen and (max-width: 782px) {
+  .fse-doc-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .fse-documentation-content {
+    padding: 20px;
+  }
+}
+
+/* Adicionando estilo para placeholder de imagem */
+.fse-doc-image-placeholder {
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  border: 1px dashed #ccc;
+  border-radius: 3px;
+}
+
+.fse-doc-image-placeholder p {
+  margin: 0;
+  color: #666;
+  font-style: italic;
+}
